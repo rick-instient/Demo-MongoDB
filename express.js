@@ -42,14 +42,14 @@ async function getData() {
 }
 
 
-app.get("/", (req, res) => {
-    let dbresponse = postData();
+app.get("/", async(req, res) => {
+    let dbresponse = await postData();
     res.status(200).send(dbresponse);
 })
 
 
-app.get("/get", (req, res) => {
-    let dbresponse = getData();
+app.get("/get", async(req, res) => {
+    let dbresponse = await getData();
     res.status(200).send(dbresponse);
 })
 
